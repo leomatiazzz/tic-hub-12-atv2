@@ -1,51 +1,48 @@
-# Sistema de e-commerce com tipagem avançada
+# .
 
-Um projeto construído para demonstrar aplicação prática de programação orientada a objetos (POO) e tipagem estrita em TypeScript. Desenvolvido como atividade da Aula 02 do Programa TIC-HUB 12 Full Stack.
+This template should help get you started developing with Vue 3 in Vite.
 
-## 🚀 Como executar
+## Recommended IDE Setup
 
-### Instalação de dependências
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-```bash
+## Recommended Browser Setup
+
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
 npm install
 ```
 
-### Iniciar a aplicação
+### Compile and Hot-Reload for Development
 
-```bash
-npm run start
+```sh
+npm run dev
 ```
 
-## 📋 Arquitetura do projeto
+### Type-Check, Compile and Minify for Production
 
-### Modelos de dados implementados
+```sh
+npm run build
+```
 
-O sistema é composto pelas seguintes entidades:
+### Lint with [ESLint](https://eslint.org/)
 
-- **Category**: Representa categorias de produtos com identificadores únicos
-- **Product**: Define produtos com atributos como preço e associação a categorias
-- **User**: Gerencia usuários do sistema com autenticação via roles
-- **Role**: Sistema de permissões restrito a dois níveis (ADMIN e CUSTOMER)
-
-### Componente principal: carrinho de compras
-
-O cart implementa:
-- [x] **getTotalItems()**: Calcula o total de unidades em estoque na sessão do carrinho
-- [x] **getFinalPrice()**: Computa o valor bruto da compra considerando descontos aplicáveis
-
-## 💡 Desafios avançados implementados
-
-Aplicação de padrões funcionais para melhorar legibilidade e manutenibilidade:
-
-- [x] **Validação com .some()**: Detecta produtos duplicados antes de inseri-los no carrinho, incrementando quantidade ao invés de criar entrada duplicada
-- [x] **Agregação com .reduce()**: A contagem total de itens utiliza reduce para processamento declarativo
-- [x] **Cálculo monetário com .reduce()**: O processamento do preço final também aproveita reduce para somatória acumulativa
-
-## ✨ Padrões de qualidade
-
-Critérios observados durante o desenvolvimento:
-
-- [x] **Type safety completa**: Nenhuma utilização de tipos `any`, garantindo segurança em tempo de compilação
-- [x] **Validação de permissões**: O compilador TypeScript rejeita valores de role que não sejam os permitidos
-- [x] **Integridade de quantidades**: Produtos adicionados múltiplas vezes têm suas quantidades acumuladas corretamente
-- [x] **Código declarativo**: Implementação de high-order functions para padrões de busca e agregação
+```sh
+npm run lint
+```
