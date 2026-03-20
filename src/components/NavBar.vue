@@ -1,84 +1,82 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <header class="navbar">
-    <div class="brand">
-      <span class="logo-text">MeuApp</span>
+  <nav class="navbar">
+    <div class="logo">
+      <h1>🛒 TICommerce</h1>
     </div>
-
-    <nav class="menu">
-      <RouterLink class="menu-item" to="/">Início</RouterLink>
+    <div class="menu">
+      <RouterLink class="menu-item" to="/">Inicial</RouterLink>
       <RouterLink class="menu-item" to="/about">Sobre</RouterLink>
-    </nav>
-  </header>
+    </div>
+  </nav>
 </template>
 
 <style scoped>
-
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
 }
 
-.brand .logo-text {
-  font-size: 1.5rem;
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 700;
-  color: var(--text-color);
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
 }
 
 .menu {
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  gap: 10rem;
+  flex: 1;
+  justify-content: center;
 }
 
-
 .menu-item {
-  position: relative;
-  color: var(--text-color);
+  color: #cbd5e1;
   text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
   font-weight: 500;
-  padding: 0.5rem 0;
-  transition: opacity 0.3s ease;
+  font-size: 1rem;
 }
 
 .menu-item:hover {
-  opacity: 0.7; 
+  background-color: rgba(102, 126, 234, 0.1);
+  color: #667eea;
 }
 
-.menu-item::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--text-color);
-  transition: width 0.3s ease-in-out;
-}
-
-
-.menu-item:hover::after {
-  width: 100%;
-}
-
-.router-link-exact-active {
-  font-weight: 700;
-}
-
-.router-link-exact-active::after {
-  width: 100%;
-}
-
-@media (prefers-color-scheme: dark) {
+@media (max-width: 768px) {
   .navbar {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.4rem;
+  }
+
+  .menu {
+    gap: 1rem;
   }
 }
 </style>

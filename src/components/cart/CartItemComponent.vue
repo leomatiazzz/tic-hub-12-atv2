@@ -92,6 +92,7 @@ export default defineComponent({
   flex-basis: 250px;
   font-weight: bold;
   align-self: center;
+  font-size: 1rem;
 }
 
 .image {

@@ -19,26 +19,48 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  /* Custom tech colors */
+  --color-primary: #667eea;
+  --color-primary-dark: #5568d3;
+  --color-accent: #764ba2;
+  --color-success: #48bb78;
+  --color-warning: #ed8936;
+  --color-danger: #f56565;
+
+  /* Green palette */
+  --color-green-200: #c6f6d5;
+  --color-green-600: #2f855a;
+  --color-green-800: #22543d;
+
+  /* Blue/Sky palette */
+  --color-sky-400: #38bdf8;
+  --color-sky-600: #0284c7;
+
+  /* Gray/Slate palette */
+  --color-slate-300: #cbd5e1;
+  --color-gray-700: #374151;
+  --color-white: #ffffff;
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
+  --color-background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-heading: #1a202c;
+  --color-text: #4a5568;
 
   --section-gap: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
+    --color-background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
 
@@ -62,6 +84,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
+  background-attachment: fixed;
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -83,4 +106,128 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Buttons */
+button,
+input[type='button'],
+input[type='submit'] {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s,
+    box-shadow 0.3s;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+button:active,
+input[type='button']:active,
+input[type='submit']:active {
+  transform: translateY(0);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Cards and Containers */
+.card,
+[class*='card'],
+.container {
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover,
+[class*='card']:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.2);
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  padding: 0.75rem;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-primary-dark) 0%, var(--color-accent) 100%);
 }

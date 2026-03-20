@@ -93,7 +93,7 @@ export default defineComponent({
       </section>
       <section class="product-list">
         <div class="empty-cart" v-if="cart?.list.length == 0">
-          <p> Seu carrinho está vazio</p>
+          <p>Seu carrinho está vazio</p>
         </div>
         <CartItemComponent
           v-for="item in productList"
@@ -124,8 +124,11 @@ export default defineComponent({
 .button-container {
   align-items: center;
   display: flex;
-  justify-content: end;
-  padding: 10px;
+  justify-content: flex-end;
+  padding: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-right: 20px;
 }
 
 .cart-modal {

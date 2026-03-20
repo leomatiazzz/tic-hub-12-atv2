@@ -13,9 +13,8 @@ import NavBar from '@/components/NavBar.vue'
 
 <style scoped>
 .header {
-  background-color: var(--color-background-soft);
-  border-radius: 10px;
-  margin: 10px;
-  padding: 5px 10px;
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 </style>

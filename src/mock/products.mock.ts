@@ -10,7 +10,7 @@ const ps5: Product = new Product(
   Shipment.AMAZON,
   'https://m.media-amazon.com/images/I/51SM5xU-M1L.jpg',
   'Armazenamento: 1 TB SSD. Resolução: até 4K 120fps com suporte a Ray Tracing',
-  0.09,
+  10,
 )
 
 const godOfWar: Product = new Product(
@@ -32,7 +32,7 @@ const eldenRing: Product = new Product(
   Shipment.FREE,
   'https://http2.mlstatic.com/D_Q_NP_774973-MLA99586538384_122025-O.webp',
   'Plataforma: PlayStation 5. Edição: Standard Edition. Formato: Físico.',
-  0.05,
+  15,
 )
 
 const finalFantasyViiRemake: Product = new Product(
@@ -54,7 +54,7 @@ const headsetSonyPulse: Product = new Product(
   Shipment.AMAZON,
   'https://images9.kabum.com.br/produtos/fotos/536999/headset-sem-fio-gamer-sony-pulse-elite-bluetooth-ps5-branco-cfi-zdd1ax_1710866295_gg.jpg',
   'Drivers planares com áudio 3D. PlayStation Link, Bluetooth 5.0. Microfone com IA. Bateria de 30h com recarga rápida.',
-  0.07,
+  25,
 )
 
 export const productsMock = [ps5, godOfWar, eldenRing, finalFantasyViiRemake, headsetSonyPulse]

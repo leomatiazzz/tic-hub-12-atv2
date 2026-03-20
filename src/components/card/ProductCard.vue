@@ -52,12 +52,23 @@ export default defineComponent({
 
 <style scoped>
 .product {
-  background-color: var(--color-background-soft);
-  border-radius: 10px;
-  box-shadow: 1px solid var(--color-background-soft);
+  background-color: #2d3748;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  position: relative;
 }
 
 .image-container {
@@ -65,82 +76,112 @@ export default defineComponent({
   background-color: var(--color-white);
   display: flex;
   justify-content: center;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
+  position: relative;
 }
 
 .content {
-  padding: 10px;
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .image {
-  max-height: 250px;
-  max-width: 200px;
+  max-height: 280px;
+  max-width: 220px;
+  object-fit: contain;
 }
 
 .title {
-  font-size: large;
+  font-size: 1rem;
   font-weight: bold;
+  color: #e2e8f0;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  flex: 1;
 }
 
 .price {
+  display: flex;
   align-items: center;
-  text-align: right;
-  font-size: 1.3rem;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
 }
 
 .original-price {
-  text-align: right;
-  font-size: 1rem;
-  opacity: 0.5;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #a0aec0;
   text-decoration: line-through;
+  margin: 4px 0;
 }
 
 .discount {
   background-color: var(--color-green-200);
-  border-radius: 2px;
+  border-radius: 4px;
   color: var(--color-green-800);
-  font-size: small;
+  font-size: 0.75rem;
   font-weight: bold;
-  margin-right: 20px;
-  padding: 3px;
+  padding: 4px 8px;
 }
 
 .free-shipment {
-  text-align: right;
+  text-align: left;
   color: var(--color-green-600);
-  font-size: small;
+  font-size: 0.85rem;
   font-weight: bold;
+  margin: 8px 0 0 0;
 }
 
 .add-to-cart {
-  display: none;
-}
-
-.product:hover .add-to-cart {
-  all: unset;
-
   position: absolute;
-
-  align-items: center;
-  background-color: var(--color-sky-400);
-  border-radius: 5px;
-  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
   display: flex;
-  margin: 10px;
-  padding: 10px 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-sky-400);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .add-to-cart:hover {
   background-color: var(--color-sky-600);
+  transform: scale(1.1);
+}
+
+.add-to-cart:active {
+  transform: scale(0.95);
 }
 
 .add-to-cart .button-icon {
-  width: 30px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+:deep(.add-to-cart svg) {
+  display: block;
 }
 
 :deep(.add-to-cart path),
 :deep(.add-to-cart circle) {
-  stroke: var(--color-text);
+  stroke: white;
+  stroke-width: 2;
 }
 </style>
