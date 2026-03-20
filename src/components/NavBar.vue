@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 <template>
   <nav class="navbar">
     <div class="logo">
-      <h1>🛒 TICommerce</h1>
+      <h1>🎮 TICommerce</h1>
     </div>
     <div class="menu">
       <RouterLink class="menu-item" to="/">Inicial</RouterLink>
